@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require("path");
 const {
   getPlanes,
+  getPlane,
   createPlane,
 } = require("../controllers/planeContoller");
 const multer = require("multer");
@@ -24,9 +25,7 @@ const upload = multer({ storage });
 
 router
   .get("/", getPlanes)
-  .get("/:id", (req, res) => {
-    res.send("Get single planes");
-  })
+  .get("/:id", getPlane)
   .post("/", upload.single("planeImage"), createPlane);
 
 module.exports = router;

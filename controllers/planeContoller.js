@@ -19,6 +19,24 @@ const getPlanes = async (req, res) => {
 };
 
 /**
+ * It gets a plane by its id
+ * @param req - The request object.
+ * @param res - The response object.
+ */
+const getPlane = async (req, res) => {
+  try {
+    const plane = await Planes.find({ _id: req.params.id });
+
+    res.status(200).json(plane);
+  } catch (error) {
+    res.status(400).json({
+      message:
+        "Возникла ошибка. Такого самолета не существует.",
+    });
+  }
+};
+
+/**
  * It creates a new plane in the database
  * @param req - The request object. This contains information about the HTTP request that raised the
  * event.
@@ -78,4 +96,4 @@ const createPlane = async (req, res) => {
   }
 };
 
-module.exports = { getPlanes, createPlane };
+module.exports = { getPlanes, getPlane, createPlane };
