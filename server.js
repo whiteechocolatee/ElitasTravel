@@ -11,7 +11,7 @@ app
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
   .use("/static", express.static(__dirname + "/assets"))
-  .use("/api/planes", require("./routes/planes"));
+  .use("/api/planes", require("./routes/planeRoutes"));
 
 /* Connecting to the mongodb database and then starting the server. */
 mongoose.connect("mongodb://127.0.0.1:27017").then(() => {
