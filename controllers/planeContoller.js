@@ -1,6 +1,11 @@
 const Planes = require("../models/planeModel");
 require("dotenv").config();
 
+/**
+ * It gets all the planes from the database and sends them to the client
+ * @param req - The request object.
+ * @param res - The response object.
+ */
 const getPlanes = async (req, res) => {
   try {
     const planes = await Planes.find();
@@ -12,6 +17,13 @@ const getPlanes = async (req, res) => {
     });
   }
 };
+
+/**
+ * It creates a new plane in the database
+ * @param req - The request object. This contains information about the HTTP request that raised the
+ * event.
+ * @param res - The response object.
+ */
 
 const createPlane = async (req, res) => {
   const errors = {};
