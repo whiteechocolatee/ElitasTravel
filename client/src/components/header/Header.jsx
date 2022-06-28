@@ -3,7 +3,6 @@ import ContentWrapper from "../contentBlock/ContentWrapper";
 import styles from "./header.module.css";
 
 function Header() {
-  console.log(styles);
   return (
     <div className={styles.header}>
       <ContentWrapper className={styles.content}>
@@ -19,8 +18,7 @@ function Header() {
       <img
         src='http://s3.amazonaws.com/gt7sp-prod/decal/80/96/76/4692826760166769680_1.png'
         className={styles.logo}
-        alt=''
-        srcset=''
+        alt='logo'
       />
     </div>
   );
