@@ -6,7 +6,7 @@
   background: linear-gradient(
     180deg,
     #191a43 0%,
-    #442d85 100%
+    #412b80 100%
   );
 }
 
@@ -39,6 +39,19 @@
   animation-fill-mode: forwards;
   white-space: pre-line;
   color: rgba(255, 255, 255, 90%);
+}
+
+.logo {
+  position: absolute;
+  right: 400px;
+  width: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeIn {
