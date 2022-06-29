@@ -37,7 +37,7 @@ function Planes() {
           <Button
             className={styles.sortBtn}
             onClick={() => setDesc(!desc)}>
-            Сортировать по цене:{`${desc ? "по убыванию" : "по возрастанию"}`}
+            Сортировать по цене: {`${desc ? "по убыванию" : "по возрастанию"}`}
           </Button>
           <Link
             to={paths.createPlane}

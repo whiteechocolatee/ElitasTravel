@@ -5,6 +5,7 @@
 
 .image {
   width: 330px;
+  height: 190px;
   border-radius: 20px;
   object-fit: cover;
   transform: scale(1.04);
@@ -34,11 +35,17 @@
   justify-content: space-between;
   padding: 7px 15px;
   color: #fff;
-  background: #5F2C67;
+  background: #5f2c67;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
 .title {
   font-size: 24px;
+}
+
+.price {
+  color: #41C9FC;
+  font-size: 26px;
+  font-weight: bold;
 }
