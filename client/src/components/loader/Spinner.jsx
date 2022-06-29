@@ -1,6 +1,7 @@
 import React from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { useSelector } from "react-redux";
+import styles from "./spinner.module.css";
 
 function Spinner() {
   const { isLoading } = useSelector((state) => {
@@ -8,9 +9,9 @@ function Spinner() {
   });
 
   return (
-    <div className='spinner'>
+    <div className={styles.spinner}>
       <ThreeDots
-        color='#FFFF5A'
+        color='#66A1C7'
         width='100'
         visible={isLoading}
       />
