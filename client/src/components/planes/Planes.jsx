@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPlanes } from "../../store/plane/planeSlice";
 import ContentWrapper from "../contentBlock/ContentWrapper";
 import Spinner from "../loader/Spinner";
+import PlaneItem from "../planeItem/PlaneItem";
 import styles from "./planes.module.css";
 
 function Planes() {
   const dispatch = useDispatch();
-  const { planes } = useSelector((state) => {
+  const { planes, isLoading } = useSelector((state) => {
     return state.planes;
   });
 
@@ -18,9 +19,13 @@ function Planes() {
     dispatch(getPlanes());
   }, [dispatch]);
 
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
     <ContentWrapper>
-      <Spinner />
+      {planes && planes.map((plane) => <PlaneItem />)}
     </ContentWrapper>
   );
 }
