@@ -1,0 +1,44 @@
+.planeItem {
+  position: relative;
+  cursor: pointer;
+}
+
+.image {
+  width: 330px;
+  border-radius: 20px;
+  object-fit: cover;
+  transform: scale(1.04);
+}
+
+.capacity {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  font-size: 24px;
+  background: linear-gradient(
+    200.44deg,
+    #4316db,
+    13%,
+    #9076e7 98%
+  );
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.info {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 15px;
+  color: #fff;
+  background: #5F2C67;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.title {
+  font-size: 24px;
+}
