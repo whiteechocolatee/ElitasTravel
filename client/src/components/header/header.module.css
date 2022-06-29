@@ -43,7 +43,8 @@
 
 .logo {
   position: absolute;
-  right: 400px;
+  top: 5%;
+  right: 15%;
   width: 300px;
   opacity: 0;
   transform: translateY(20px);
