@@ -10,8 +10,6 @@ function PlaneItem({
   planeImage = "",
   _id = "",
 }) {
-  console.log(planeImage);
-
   return (
     <Link
       to={`${paths.plane}/${_id}`}

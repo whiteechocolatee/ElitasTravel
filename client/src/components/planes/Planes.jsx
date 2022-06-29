@@ -1,15 +1,14 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPlanes } from "../../store/plane/planeSlice";
+import { Link } from "react-router-dom";
 import ContentWrapper from "../contentBlock/ContentWrapper";
 import Spinner from "../loader/Spinner";
 import PlaneItem from "../planeItem/PlaneItem";
 import styles from "./planes.module.css";
-import { Link } from "react-router-dom";
 import { paths } from "../../paths";
 import Button from "../button/Button";
 import { useSortItems } from "../../sortableHook/useSortItems";
+import { getPlanes } from "../../store/plane/planesSlice";
 
 function Planes() {
   const dispatch = useDispatch();
@@ -19,8 +18,6 @@ function Planes() {
   const { desc, setDesc, sortedItems } = useSortItems(
     planes || [],
   );
-
-  console.log("planes >>>", planes);
 
   useEffect(() => {
     dispatch(getPlanes());
@@ -37,7 +34,8 @@ function Planes() {
           <Button
             className={styles.sortBtn}
             onClick={() => setDesc(!desc)}>
-            Сортировать по цене: {`${desc ? "по убыванию" : "по возрастанию"}`}
+            Сортировать по цене:{" "}
+            {`${desc ? "по убыванию" : "по возрастанию"}`}
           </Button>
           <Link
             to={paths.createPlane}
