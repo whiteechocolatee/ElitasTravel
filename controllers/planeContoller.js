@@ -101,7 +101,7 @@ const createPlane = async (req, res) => {
       price,
       description,
       capacity,
-      planeImage: `${process.env.HOST}:${process.env.PORT}/static/${req.file.filename}`,
+      planeImage: `${process.env.HOST}:${process.env.PORT}/static/resized/${image}`,
     });
 
     res.status(201).json(plane);
