@@ -1,4 +1,8 @@
 const Planes = require("../models/planeModel");
+const sharp = require("sharp");
+const path = require("path");
+const fs = require("fs");
+
 require("dotenv").config();
 
 /**
@@ -78,6 +82,19 @@ const createPlane = async (req, res) => {
 
   try {
     const { name, price, description, capacity } = req.body;
+    const { filename: image } = req.file;
+
+    await sharp(req.file.path)
+      .resize(500)
+      .jpeg({ quality: 50 })
+      .toFile(
+        path.resolve(
+          req.file.destination,
+          "resized",
+          image,
+        ),
+      );
+    fs.unlinkSync(req.file.path);
 
     const plane = await Planes.create({
       name,
