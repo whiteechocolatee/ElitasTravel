@@ -24,8 +24,11 @@ function Planes() {
   }
 
   return (
-    <ContentWrapper>
-      {planes && planes.map((plane) => <PlaneItem />)}
+    <ContentWrapper className={styles.wrap}>
+      {planes &&
+        planes.map((plane) => (
+          <PlaneItem key={plane._id} {...plane} />
+        ))}
     </ContentWrapper>
   );
 }
