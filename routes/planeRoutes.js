@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+const multer = require("multer");
+
 const {
   getPlanes,
   getPlane,
   createPlane,
 } = require("../controllers/planeContoller");
-const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination: "./assets/",
