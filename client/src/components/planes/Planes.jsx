@@ -8,7 +8,7 @@ import styles from "./planes.module.css";
 import { paths } from "../../paths";
 import Button from "../button/Button";
 import { useSortItems } from "../../sortableHook/useSortItems";
-import { getPlanes } from "../../store/plane/planesSlice";
+import { getPlanes } from "../../store/planes/planesSlice";
 
 function Planes() {
   const dispatch = useDispatch();
