@@ -15,11 +15,6 @@ function Header() {
             styles.desc
           }>{`С нашей компанией вы забудете об о всем \n кроме ощущения комфортного путешествия`}</p>
       </ContentWrapper>
-      <img
-        src='http://s3.amazonaws.com/gt7sp-prod/decal/80/96/76/4692826760166769680_1.png'
-        className={styles.logo}
-        alt='logo'
-      />
     </div>
   );
 }

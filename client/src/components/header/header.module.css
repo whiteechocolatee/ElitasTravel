@@ -41,20 +41,6 @@
   color: rgba(255, 255, 255, 90%);
 }
 
-.logo {
-  position: absolute;
-  top: 5%;
-  right: 15%;
-  width: 300px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation-duration: 1s;
-  animation-delay: 0.5s;
-  animation-name: fadeIn;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
