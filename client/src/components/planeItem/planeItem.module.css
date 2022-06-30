@@ -1,6 +1,7 @@
 .planeItem {
   position: relative;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .image {
@@ -45,7 +46,7 @@
 }
 
 .price {
-  color: #41C9FC;
+  color: #41c9fc;
   font-size: 24px;
   font-weight: bold;
 }
