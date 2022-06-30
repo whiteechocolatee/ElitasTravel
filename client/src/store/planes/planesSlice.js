@@ -1,5 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createAsyncThunk,
+} from "@reduxjs/toolkit";
 import planeService from "../services/planeService";
 
 /* Creating a thunk that will be used to make an async call to the server. */
