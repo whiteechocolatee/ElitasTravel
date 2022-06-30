@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { paths } from "./paths";
 import PlanePage from "./pages/PlanePage/PlanePage";
+import CreatePlane from "./pages/createPlane/CreatePlane";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
         <Route
           path={`${paths.plane}/:id`}
           element={<PlanePage />}
+        />
+        <Route
+          path={paths.createPlane}
+          element={<CreatePlane />}
         />
       </Routes>
     </BrowserRouter>
