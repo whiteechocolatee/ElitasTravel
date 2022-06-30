@@ -9,8 +9,19 @@ const getPlanes = async () => {
   return planes.data;
 };
 
+/**
+ * It makes a request to the server for a plane with the given id, and returns the plane object
+ * @param id - the id of the plane you want to get
+ * @returns The plane object
+ */
+const getPlane = async (id) => {
+  const plane = await axios.get(`/api/planes/${id}`);
+  return plane.data;
+};
+
 const planeService = {
   getPlanes,
+  getPlane,
 };
 
 export default planeService;

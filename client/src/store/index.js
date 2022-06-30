@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import planeSlice from "./plane/planesSlice";
+import planeSlice from "./plane/planeSlice";
+import planesSlice from "./planes/planesSlice";
 
 export const store = configureStore({
   reducer: {
-    planes: planeSlice,
+    planes: planesSlice,
+    plane: planeSlice,
   },
 });
