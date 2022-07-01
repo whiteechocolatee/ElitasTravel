@@ -1,0 +1,22 @@
+.input {
+  background: linear-gradient(
+    180deg,
+    rgb(102, 34, 131) 0%,
+    rgb(77, 17, 87) 100%
+  );
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: 0.5px #f0f0f0 solid;
+  border-radius: 12px;
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.error {
+  color: rgba(255, 0, 93, 0.8);
+}
