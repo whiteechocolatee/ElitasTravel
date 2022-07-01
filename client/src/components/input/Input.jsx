@@ -7,7 +7,7 @@ function Input({
   error = null,
   name = "",
   placeholder = "",
-  onClick = () => null,
+  onChange = () => null,
 }) {
   return (
     <div className={`${className} ${styles.container}`}>
@@ -15,7 +15,7 @@ function Input({
         type={type}
         placeholder={placeholder}
         name={name}
-        onClick={onClick}
+        onChange={onChange}
         className={styles.input}
       />
       {error && (
