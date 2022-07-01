@@ -4,14 +4,45 @@ import styles from "./createPlane.module.css";
 import Button from "../../components/button/Button";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { createPlane } from "../../store/plane/planeSlice";
+import { paths } from "../../paths";
 
 function CreatePlane() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [name, setName] = useState();
   const [description, setDescription] = useState();
   const [price, setPrice] = useState();
   const [capacity, setCapacity] = useState();
   const [planeImage, setPlaneImage] = useState();
+
+  const handleFormSubmit = useCallback(() => {
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("capacity", capacity);
+    formData.append("planeImage", planeImage);
+
+    dispatch(createPlane(formData)).then((res) => {
+      if (!res.error) {
+        navigate(`${paths.plane}/${res.payload._id}`, {
+          replace: true,
+        });
+      }
+    });
+  }, [
+    capacity,
+    description,
+    dispatch,
+    name,
+    navigate,
+    planeImage,
+    price,
+  ]);
 
   return (
     <ContentWrapper>
@@ -23,32 +54,38 @@ function CreatePlane() {
         </Button>
         <h1 className={styles.title}>Создайте самолет</h1>
         <Input
-          value={name}
           type='text'
           name='name'
           placeholder='Укажите название'
+          onChange={(e) => setName(e.target.value)}
         />
         <Input
           type='text'
-          name='name'
+          name='description'
           placeholder='Укажите описание'
+          onChange={(e) => setDescription(e.target.value)}
         />
         <Input
           type='text'
-          name='name'
+          name='price'
           placeholder='Укажите цену'
+          onChange={(e) => setPrice(e.target.value)}
         />
         <Input
+          name='capacity'
           type='text'
-          name='name'
           placeholder='Укажите колличество мест'
+          onChange={(e) => setCapacity(e.target.value)}
         />
         <Input
           type='file'
-          name='name'
+          name='planeImage'
           placeholder='Добавьте фото'
+          onChange={(e) => setPlaneImage(e.target.files[0])}
         />
-        <Button>Создать самолет</Button>
+        <Button onClick={handleFormSubmit}>
+          Создать самолет
+        </Button>
       </form>
     </ContentWrapper>
   );
