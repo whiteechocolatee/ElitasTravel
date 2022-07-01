@@ -4,7 +4,7 @@ import styles from "./input.module.css";
 function Input({
   type = "",
   className = "",
-  error = null,
+  error = "",
   name = "",
   placeholder = "",
   onChange = () => null,
@@ -18,9 +18,7 @@ function Input({
         onChange={onChange}
         className={styles.input}
       />
-      {error && (
-        <span className={styles.error}>{error}</span>
-      )}
+      {error && <span className={styles.error}>{error}</span>}
     </div>
   );
 }

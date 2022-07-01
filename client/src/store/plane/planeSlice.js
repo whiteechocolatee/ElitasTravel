@@ -23,9 +23,7 @@ export const createPlane = createAsyncThunk(
     try {
       return await planeService.createPlane(formData);
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        error.response.message,
-      );
+      return thunkAPI.rejectWithValue(error.response.data);
     }
   },
 );
@@ -68,6 +66,7 @@ const planeSlice = createSlice({
       })
 
       .addCase(createPlane.rejected, (state, action) => {
+        console.log("err obj >>>", action);
         state.isLoading = false;
         state.isError = true;
         state.errors = action.payload;

@@ -50,6 +50,14 @@ const getPlane = async (req, res) => {
 const createPlane = async (req, res) => {
   const errors = {};
 
+  console.log([
+    req.body.name,
+    req.body.price,
+    req.body.description,
+    req.body.capacity,
+    req.file,
+  ]);
+
   if (!req.body.name) {
     errors.name = { message: "Пожалуйста, укажите имя!" };
   }
