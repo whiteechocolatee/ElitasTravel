@@ -15,10 +15,6 @@ function PlanePage() {
     (state) => state.plane,
   );
 
-  console.log("id >>>", id);
-  console.log("plane >>>", plane);
-  console.log("load >>>", isLoading);
-
   useEffect(() => {
     dispatch(getPlane(id));
   }, [dispatch, id]);

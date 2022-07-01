@@ -14,7 +14,6 @@ function CreatePlane() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { errors } = useSelector((state) => {
-    console.log("state>>>", state.plane.errors);
     return state.plane;
   });
   const [name, setName] = useState("");
@@ -49,7 +48,6 @@ function CreatePlane() {
     price,
   ]);
 
-  console.log("errors>>>", errors);
   return (
     <ContentWrapper>
       <form className={styles.form}>

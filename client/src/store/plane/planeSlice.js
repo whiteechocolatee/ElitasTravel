@@ -66,7 +66,6 @@ const planeSlice = createSlice({
       })
 
       .addCase(createPlane.rejected, (state, action) => {
-        console.log("err obj >>>", action);
         state.isLoading = false;
         state.isError = true;
         state.errors = action.payload;
