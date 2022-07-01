@@ -7,6 +7,7 @@ import {
 import { paths } from "./paths";
 import PlanePage from "./pages/PlanePage/PlanePage";
 import CreatePlane from "./pages/createPlane/CreatePlane";
+import OrderPage from "./pages/orderPage/OrderPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           path={paths.createPlane}
           element={<CreatePlane />}
         />
+        <Route path={paths.order} element={<OrderPage />} />
       </Routes>
     </BrowserRouter>
   );
